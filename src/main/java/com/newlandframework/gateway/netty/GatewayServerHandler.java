@@ -128,9 +128,9 @@ public class GatewayServerHandler extends SimpleChannelInboundHandler<Object> {
 
     private String matchUrl() {
         for (GatewayAttribute gateway : RoutingLoader.GATEWAYS) {
-            if (gateway.getServerPath().equals(uri)) {
+            if (uri!=null&&uri.startsWith(gateway.getServerPath())) {
                 for (RouteAttribute route : RoutingLoader.ROUTERS) {
-                    if (route.getServerPath().equals(uri)) {
+                    if (uri!=null&&uri.startsWith(route.getServerPath())) {
                         String[] keys = StringUtils.delimitedListToStringArray(route.getKeyWord(), GATEWAY_OPTION_KEY_WORD_SPLIT);
                         boolean match = true;
                         for (String key : keys) {
