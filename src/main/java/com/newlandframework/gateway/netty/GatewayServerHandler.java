@@ -87,9 +87,11 @@ public class GatewayServerHandler extends SimpleChannelInboundHandler<Object> {
 
                 System.out.println("[NETTY-GATEWAY] REQUEST : " + buffer.toString());
 
-                url = matchUrl();
+                //url = matchUrl();
+                url=request.headers().get("Host")+request.uri();
+                System.out.println("Host:"+request.headers().get("Host"));
+                System.out.println("uri:"+request.uri());
                 System.out.println("[NETTY-GATEWAY] URL : " + url);
-
                 Future<StringBuilder> future = executor.submit(new Callable<StringBuilder>() {
                     @Override
                     public StringBuilder call() {
