@@ -39,6 +39,8 @@ public class HttpClientUtils {
         URL url;
 
         try {
+        	System.out.println("serverUrl:"+serverUrl);
+        	System.out.println("xml:"+xml);
             url = new URL(serverUrl);
             URLConnection conn = url.openConnection();
             conn.setDoOutput(true);
