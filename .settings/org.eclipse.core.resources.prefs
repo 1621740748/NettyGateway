@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+encoding//src/main/resources/netty-gateway.properties=GBK
+encoding//src/main/resources/netty-route.properties=GBK
